@@ -33,8 +33,9 @@ body {
     justify-content: flex-start;
     align-items: center;
     width: 90%;
-    height: 120px;
+    height: 140px;
     background-color: gray;
+    margin-top: 20px;
     margin-bottom: 30px;
 }
 
@@ -128,4 +129,13 @@ body {
     font-size: 28px;
     width: 90%;
     height: 70px;
+}
+
+#signature, a {
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: monospace;
+    font-size: 15px;
+    color: black;
 }
