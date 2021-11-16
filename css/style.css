@@ -39,12 +39,11 @@ body {
     margin-bottom: 30px;
 }
 
-#top-section {
+#top-display {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border: 2px;
-    border-color: black;
+    opacity: .4;
     border-radius: 10px;
     width: 90%;
     height: 20%;
@@ -54,7 +53,7 @@ body {
     font-weight: 400;
 }
 
-#bottom-section {
+#bottom-display {
     display: flex;
     justify-content: flex-end;
     align-items: center;
