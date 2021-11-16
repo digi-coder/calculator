@@ -69,9 +69,61 @@ body {
 
 #keyboard-container {
     display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     width: 90%;
     height: 80%;
     border-radius: 10px;
     border: 0.5mm solid black;
+}
+
+#mem-buttons-holder {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mem-buttons {
+    font-size: 14px;
+    width: 50px;
+    height: 30px;
+    border: 0;
+    background-color: transparent;
+}
+
+#buttons-holder-1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#buttons-holder-2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#buttons-holder-3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#buttons-holder-4 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#buttons-holder-5 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.calc-buttons {
+    font-size: 30px;
+    width: 90%;
+    height: 60px;
 }
