@@ -127,8 +127,10 @@ window.addEventListener('keydown', (e) => {
         pressOperButtons(e.key);
     } else if(e.key === '*'){
         pressOperButtons('x');
-    } else if(e.key == 'Enter' || e.key === '='){
+    } else if(e.key === 'Enter' || e.key === '='){
         pressEqualButton();
+    } else if(e.key === 'Backspace' || e.key === 'Delete'){
+        pressBackspaceButton();
     }
 
 });
@@ -154,4 +156,9 @@ function pressOperButtons(key){
 //Function that handles equal sign button press
 function pressEqualButton(){
     equalEl.click();
+}
+
+//Function that handles backspace button press
+function pressBackspaceButton(){
+    backspaceEl.click();
 }
