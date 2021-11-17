@@ -135,7 +135,7 @@ window.addEventListener('keydown', (e) => {
 
 });
 
-//Function that handles number button presses ()
+//Function that handles number button presses 
 function pressNumButtons(key){
     numbersEl.forEach(button => {
         if(button.innerText === key){
