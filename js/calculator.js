@@ -93,7 +93,7 @@ clearLastEl.addEventListener('click', (e) => {
     dis2Value = '';
 });
 
-//Add keyboard functionality
+//Add keyboard functionality for numbers and operators
 window.addEventListener('keydown', (e) => {
     if(
         e.key === '0' ||
@@ -108,14 +108,41 @@ window.addEventListener('keydown', (e) => {
         e.key === '9' ||
         e.key === '.'
     ){
-        pressButtonEl(e.key);
+        pressNumButtons(e.key);
+    } else if(
+        e.key === '+' ||
+        e.key === '-' ||
+        e.key === '/' ||
+        e.key === '%'
+    ){
+        pressOperButtons(e.key);
+    } else if(e.key === '*'){
+        pressOperButtons('x');
+    } else if(e.key == 'Enter' || e.key === '='){
+        pressEqualButton();
     }
+
 });
 
-function pressButtonEl(key){
+//Function that handles number button presses ()
+function pressNumButtons(key){
     numbersEl.forEach(button => {
         if(button.innerText === key){
             button.click();
         }
     })
 };
+
+//Function that handles operator button presses
+function pressOperButtons(key){
+    operatorsEl.forEach(button => {
+        if(button.innerText === key){
+            button.click();
+        }
+    })
+};
+
+//Function that handles equal sign button press
+function pressEqualButton(){
+    equalEl.click();
+}
