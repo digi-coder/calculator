@@ -51,15 +51,27 @@ function clearVar(operator = ''){
 }
 
 function mathCalc(){
-    if(lastOperator === 'X'){
+    if(lastOperator === 'x'){
         result = parseFloat(result) * parseFloat(dis2Value);
     } else if(lastOperator == '+'){
         result = parseFloat(result) + parseFloat(dis2Value);
     } else if(lastOperator == '-'){
         result = parseFloat(result) - parseFloat(dis2Value);
-    } else if(lastOperator == '&#247'){
+    } else if(lastOperator == '/'){
         result = parseFloat(result) / parseFloat(dis2Value);
     } else if(lastOperator == '%'){
         result = parseFloat(result) % parseFloat(dis2Value);
     }
 }
+
+//Add functionality to the '=' sign
+equalEl.addEventListener('click', (e) => {
+    if(!dis1Value || !dis2Value) return;
+    hasDecimal = false;
+    mathCalc();
+    clearVar();
+    display2El.innerText = result;
+    display3El.innerText = '';
+    dis2Value = result;
+    dis1Value = '';
+});
