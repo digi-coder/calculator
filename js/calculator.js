@@ -96,6 +96,12 @@ clearLastEl.addEventListener('click', (e) => {
     dis2Value = '';
 });
 
+//Add functionality to the backspace button
+backspaceEl.addEventListener('click', (e) => {
+    display2El.innerText = dis2Value.substring(0, dis2Value.length -1);
+    dis2Value = display2El.innerText;
+});
+
 //Add keyboard functionality for numbers and operators
 window.addEventListener('keydown', (e) => {
     if(
