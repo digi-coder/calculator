@@ -1,4 +1,3 @@
-console.log('It Works!!');
 const display1El = document.querySelector('.display-1');
 const display2El = document.querySelector('.display-2');
 const display3El = document.querySelector('.display-3');
@@ -9,13 +8,12 @@ const memoryEl = document.querySelectorAll('.mem-buttons');
 const numbersEl = document.querySelectorAll('.number');
 const operatorsEl = document.querySelectorAll('.operator');
 const equalEl = document.querySelector('.equal');
-// const decimalEl = document.querySelector('.decimal');
 
 let dis1Value = '';
 let dis2Value = '';
 let dis3Value = '';
 let result = null;
-let clearLast = '';
+let lastOperator = '';
 let hasDecimal = false;
 
 numbersEl.forEach(number => {
@@ -28,4 +26,40 @@ numbersEl.forEach(number => {
         dis2Value += e.target.innerText;
         display2El.innerText = dis2Value;
     })
-})
+});
+
+operatorsEl.forEach(operator => {
+    operator.addEventListener('click', (e) => {
+        hasDecimal = false;
+        const operatorName = e.target.innerText;
+        if(dis1Value && dis2Value && lastOperator){
+            mathCalc();
+        } else {
+            result = parseFloat(dis2Value);
+        }
+        clearVar(operatorName);
+        lastOperator = operatorName;
+    })
+});
+
+function clearVar(operator = ''){
+    dis1Value += dis2Value + ' ' + operator + ' ';
+    display1El.innerText = dis1Value;
+    display2El.innerText = '';
+    dis2Value = '';
+    display3El.innerText = result;
+}
+
+function mathCalc(){
+    if(lastOperator === 'X'){
+        result = parseFloat(result) * parseFloat(dis2Value);
+    } else if(lastOperator == '+'){
+        result = parseFloat(result) + parseFloat(dis2Value);
+    } else if(lastOperator == '-'){
+        result = parseFloat(result) - parseFloat(dis2Value);
+    } else if(lastOperator == '&#247'){
+        result = parseFloat(result) / parseFloat(dis2Value);
+    } else if(lastOperator == '%'){
+        result = parseFloat(result) % parseFloat(dis2Value);
+    }
+}
