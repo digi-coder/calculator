@@ -102,7 +102,7 @@ body {
     justify-items: center;
 }
 
-.calc-buttons {
+#keypad .button {
     font-size: 26px;
     width: 90%;
     height: 70px;
