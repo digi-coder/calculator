@@ -94,34 +94,10 @@ body {
     margin-bottom: 10px;
 }
 
-#buttons-holder-1 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-#buttons-holder-2 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-#buttons-holder-3 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-#buttons-holder-4 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-#buttons-holder-5 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+#keypad {
+    display: grid;
+    
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
 }
 
 .calc-buttons {
