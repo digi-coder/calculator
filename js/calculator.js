@@ -16,6 +16,7 @@ let result = null;
 let lastOperator = '';
 let hasDecimal = false;
 
+//Add event listener for numbers
 numbersEl.forEach(number => {
     number.addEventListener('click', (e) => {
         if(e.target.innerText === '.' && !hasDecimal){
@@ -28,8 +29,10 @@ numbersEl.forEach(number => {
     })
 });
 
+//Add event listener for operators
 operatorsEl.forEach(operator => {
     operator.addEventListener('click', (e) => {
+        if (!dis2Value) return;
         hasDecimal = false;
         const operatorName = e.target.innerText;
         if(dis1Value && dis2Value && lastOperator){
@@ -54,13 +57,13 @@ function clearVar(operator = ''){
 function mathCalc(){
     if(lastOperator === 'x'){
         result = parseFloat(result) * parseFloat(dis2Value);
-    } else if(lastOperator == '+'){
+    } else if(lastOperator === '+'){
         result = parseFloat(result) + parseFloat(dis2Value);
-    } else if(lastOperator == '-'){
+    } else if(lastOperator === '-'){
         result = parseFloat(result) - parseFloat(dis2Value);
-    } else if(lastOperator == '/'){
+    } else if(lastOperator === '/'){
         result = parseFloat(result) / parseFloat(dis2Value);
-    } else if(lastOperator == '%'){
+    } else if(lastOperator === '%'){
         result = parseFloat(result) % parseFloat(dis2Value);
     }
 }
