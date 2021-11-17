@@ -50,6 +50,7 @@ function clearVar(operator = ''){
     display3El.innerText = result;
 }
 
+//Add functionality to the operators
 function mathCalc(){
     if(lastOperator === 'x'){
         result = parseFloat(result) * parseFloat(dis2Value);
@@ -75,3 +76,46 @@ equalEl.addEventListener('click', (e) => {
     dis2Value = result;
     dis1Value = '';
 });
+
+//Add functionality to the Clear All (C) button
+clearAllEl.addEventListener('click', (e) => {
+    display1El.innerText = '0';
+    display2El.innerText = '0';
+    display3El.innerText = '0';
+    dis1Value = '';
+    dis2Value = '';
+    result = '';
+});
+
+//Add functionality to the Clear Last Entity (CE) button
+clearLastEl.addEventListener('click', (e) => {
+    display2El.innerText = '0';
+    dis2Value = '';
+});
+
+//Add keyboard functionality
+window.addEventListener('keydown', (e) => {
+    if(
+        e.key === '0' ||
+        e.key === '1' ||
+        e.key === '2' ||
+        e.key === '3' ||
+        e.key === '4' ||
+        e.key === '5' ||
+        e.key === '6' ||
+        e.key === '7' ||
+        e.key === '8' ||
+        e.key === '9' ||
+        e.key === '.'
+    ){
+        pressButtonEl(e.key);
+    }
+});
+
+function pressButtonEl(key){
+    numbersEl.forEach(button => {
+        if(button.innerText === key){
+            button.click();
+        }
+    })
+};
