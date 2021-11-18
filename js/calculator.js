@@ -33,8 +33,11 @@ numbersEl.forEach(number => {
         } else if(e.target.innerText === '.' && hasDecimal){
             return;
         }
-        dis2Value += e.target.innerText;
-        display2El.innerText = dis2Value;
+        //If operation done clear screen
+        if (display3El.innerText) {
+            dis2Value += e.target.innerText;
+            display2El.innerText = dis2Value;
+        } else {clearEverything();};
     })
 });
 
@@ -75,7 +78,7 @@ function mathCalc(){
         result = parseFloat(result) / parseFloat(dis2Value);
         } else { 
             const comment = Math.floor(Math.random() * comments.length);
-            result = (comments[comment]); 
+            result = (comments[comment]);
         }
     } else if(lastOperator === '%'){
         result = parseFloat(result) % parseFloat(dis2Value);
@@ -188,3 +191,11 @@ function pressBackspaceButton(){
     backspaceEl.click();
 }
 
+function clearEverything() {
+    display1El.innerText = '0';
+    display2El.innerText = '0';
+    display3El.innerText = '0';
+    dis1Value = '';
+    dis2Value = '';
+    result = '';
+}
