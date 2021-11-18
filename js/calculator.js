@@ -34,18 +34,22 @@ const comments = [
 //Add event listener for numbers
 numbersEl.forEach(number => {
     number.addEventListener('click', (e) => {
-        if(e.target.innerText === '.' && !hasDecimal){
-            hasDecimal = true;
-        } else if(e.target.innerText === '.' && hasDecimal){
-            return;
-        }
-        //If operation done clear screen
-        if (display3El.innerText) {
-            dis2Value += e.target.innerText;
-            display2El.innerText = dis2Value;
-        } else {
-            clearEverything();
-        }
+        //Don't take more than 11 digits in Display 2
+        if(dis2Value.length < '11'){
+            //Check if decimal was already used
+            if(e.target.innerText === '.' && !hasDecimal){
+                hasDecimal = true;
+            } else if(e.target.innerText === '.' && hasDecimal){
+                return;
+            }
+            //If operation done clear screen
+            if (display3El.innerText) {
+                dis2Value += e.target.innerText;
+                display2El.innerText = dis2Value;
+            } else {
+                clearEverything();
+            }
+        } else { return; }
     })
 });
 
