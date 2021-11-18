@@ -92,14 +92,25 @@ clearAllEl.addEventListener('click', (e) => {
 
 //Add functionality to the Clear Last Entity (CE) button
 clearLastEl.addEventListener('click', (e) => {
-    display2El.innerText = '0';
-    dis2Value = '';
+    if (display3El.innerText) { 
+        display2El.innerText = '0';
+        dis2Value = '';
+    } else {
+        display1El.innerText = '0';
+        display2El.innerText = '0';
+        display3El.innerText = '0';
+        dis1Value = '';
+        dis2Value = '';
+        result = ''; 
+        };
 });
 
 //Add functionality to the backspace button
 backspaceEl.addEventListener('click', (e) => {
-    display2El.innerText = dis2Value.substring(0, dis2Value.length -1);
-    dis2Value = display2El.innerText;
+    if (display3El.innerText) { 
+        display2El.innerText = dis2Value.substring(0, dis2Value.length -1);
+        dis2Value = display2El.innerText;
+    } else { return }; 
 });
 
 //Add keyboard functionality for numbers and operators
