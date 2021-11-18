@@ -16,6 +16,15 @@ let result = null;
 let lastOperator = '';
 let hasDecimal = false;
 
+const comments = [
+    "Yeah, right", 
+    "Yeah, sure", 
+    "Staapp it", 
+    "C'mon", 
+    "Yo dude", 
+    "U bored?"
+];
+
 //Add event listener for numbers
 numbersEl.forEach(number => {
     number.addEventListener('click', (e) => {
@@ -62,7 +71,12 @@ function mathCalc(){
     } else if(lastOperator === '-'){
         result = parseFloat(result) - parseFloat(dis2Value);
     } else if(lastOperator === '/'){
+        if (parseFloat(dis2Value) !== 0){
         result = parseFloat(result) / parseFloat(dis2Value);
+        } else { 
+            const comment = Math.floor(Math.random() * comments.length);
+            result = (comments[comment]); 
+        }
     } else if(lastOperator === '%'){
         result = parseFloat(result) % parseFloat(dis2Value);
     }
@@ -173,3 +187,4 @@ function pressEqualButton(){
 function pressBackspaceButton(){
     backspaceEl.click();
 }
+
