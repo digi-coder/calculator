@@ -21,7 +21,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: darkgrey;
     width: 375px;
     height: 812px;
     border-radius: 10px;
