@@ -129,3 +129,26 @@ body {
     font-size: 15px;
     color: black;
 }
+
+.number {
+    background-color: rgb(255, 136, 0);
+}
+
+.operator {
+    background-color: red;
+    color: white;
+}
+
+.eraser {
+    background-color: #B7AC44;
+}
+
+.disabled {
+    background-color: rgb(36, 129, 250);
+    /* opacity: 50%; */
+}
+
+.equal, .decimal {
+    background-color: #B7AC44;
+
+}
