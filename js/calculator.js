@@ -167,7 +167,7 @@ window.addEventListener('keydown', (e) => {
         pressOperButtons(e.key);
     } else if(e.key === '*'){
         pressOperButtons('x');
-    } else if(e.key === 'Enter' || e.key === '='){
+    } else if(e.key == 'Enter' || e.key === '='){
         pressEqualButton();
     } else if(e.key === 'Backspace' || e.key === 'Delete'){
         pressBackspaceButton();
