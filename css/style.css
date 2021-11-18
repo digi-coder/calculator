@@ -84,8 +84,6 @@ body {
 #keyboard-container {
     display: flex;
     flex-direction: column;
-    /* flex-wrap: nowrap; */
-    /* justify-content: center; */
     width: 90%;
     height: 500px;
     border-radius: 10px;
@@ -120,6 +118,7 @@ body {
     font-size: 26px;
     width: 90%;
     height: 70px;
+    border-radius: 5px;
 }
 
 #signature, a {
