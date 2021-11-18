@@ -18,11 +18,17 @@ let hasDecimal = false;
 
 const comments = [
     "Yeah, right", 
-    "Yeah, sure", 
-    "Staapp it", 
+    "Staaaaaaaaappppp", 
     "C'mon", 
+    "Life's good, you should get one",
+    "I don’t have the energy to pretend to like you today",
+    "U bored?",
+    "My imaginary friend says that you need a therapist",
+    "Zombies eat brains. You’re safe",
     "Yo dude", 
-    "U bored?"
+    "I’ll try being nicer, if you try being smarter",
+    "Hmmm, sure", 
+    "Staapp"
 ];
 
 //Add event listener for numbers
@@ -37,7 +43,9 @@ numbersEl.forEach(number => {
         if (display3El.innerText) {
             dis2Value += e.target.innerText;
             display2El.innerText = dis2Value;
-        } else {clearEverything();};
+        } else {
+            clearEverything();
+        }
     })
 });
 
@@ -78,7 +86,7 @@ function mathCalc(){
         result = parseFloat(result) / parseFloat(dis2Value);
         } else { 
             const comment = Math.floor(Math.random() * comments.length);
-            result = (comments[comment]);
+            alert(comments[comment]);
         }
     } else if(lastOperator === '%'){
         result = parseFloat(result) % parseFloat(dis2Value);
