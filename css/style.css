@@ -146,7 +146,7 @@ body {
 }
 
 .eraser {
-    background-color: #B7AC44;
+    background-color: rgb(35, 214, 35);
 }
 
 .disabled {
@@ -155,5 +155,5 @@ body {
 }
 
 .equal, .decimal {
-    background-color: #B7AC44;
+    background-color: rgb(35, 214, 35);
 }
