@@ -80,20 +80,63 @@ function clearVar(operator = ''){
 //Add functionality to the operators
 function mathCalc(){
     if(lastOperator === 'x'){
-        result = parseFloat(result) * parseFloat(dis2Value);
+        result = multiply();
     } else if(lastOperator === '+'){
-        result = parseFloat(result) + parseFloat(dis2Value);
+        result = add();
     } else if(lastOperator === '-'){
-        result = parseFloat(result) - parseFloat(dis2Value);
+        result = subtract();
     } else if(lastOperator === '/'){
         if (parseFloat(dis2Value) !== 0){
-        result = parseFloat(result) / parseFloat(dis2Value);
+        result = divide();
         } else { 
             const comment = Math.floor(Math.random() * comments.length);
             alert(comments[comment]);
         }
     } else if(lastOperator === '%'){
         result = parseFloat(result) % parseFloat(dis2Value);
+    }
+}
+
+function multiply() {
+    calculation = parseFloat(result) * parseFloat(dis2Value);
+    //Check if result has a decimal and if true... 
+    result = (calculation - Math.floor(calculation)) !== 0;
+    if (result){
+        //...limit it to 4 decimal places
+        return calculation.toFixed(4);
+        //Otherwise just return the result
+    } else {
+        return calculation;
+    }
+}
+
+function add() {
+    calculation = parseFloat(result) + parseFloat(dis2Value);
+    result = (calculation - Math.floor(calculation)) !== 0;
+    if (result){
+        return calculation.toFixed(4);
+    } else {
+        return calculation;
+    }
+}
+
+function subtract() {
+    calculation = parseFloat(result) - parseFloat(dis2Value);
+    result = (calculation - Math.floor(calculation)) !== 0;
+    if (result){
+        return calculation.toFixed(4);
+    } else {
+        return calculation;
+    }
+}
+
+function divide() {
+    calculation = parseFloat(result) / parseFloat(dis2Value);
+    result = (calculation - Math.floor(calculation)) !== 0;
+    if (result){
+        return calculation.toFixed(4);
+    } else {
+        return calculation;
     }
 }
 
