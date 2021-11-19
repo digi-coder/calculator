@@ -17,17 +17,17 @@ let lastOperator = '';
 let hasDecimal = false;
 
 const comments = [
-    "Yeah, right", 
-    "Staaaaaaaaappppp", 
-    "C'mon", 
+    "Yeah, right",
+    "Staaaaaaaaappppp",
+    "C'mon",
     "Life's good, you should get one",
     "I don’t have the energy to pretend to like you today",
     "U bored?",
     "My imaginary friend says that you need a therapist",
     "Zombies eat brains. You’re safe",
-    "Yo dude", 
+    "Yo dude",
     "I’ll try being nicer, if you try being smarter",
-    "Hmmm, sure", 
+    "Hmmm, sure",
     "Staapp"
 ];
 
@@ -35,11 +35,11 @@ const comments = [
 numbersEl.forEach(number => {
     number.addEventListener('click', (e) => {
         //Don't take more than 11 digits in Display 2
-        if(dis2Value.length < '11'){
+        if (dis2Value.length < '11') {
             //Check if decimal was already used
-            if(e.target.innerText === '.' && !hasDecimal){
+            if (e.target.innerText === '.' && !hasDecimal) {
                 hasDecimal = true;
-            } else if(e.target.innerText === '.' && hasDecimal){
+            } else if (e.target.innerText === '.' && hasDecimal) {
                 return;
             }
             //If operation done clear screen
@@ -59,7 +59,7 @@ operatorsEl.forEach(operator => {
         if (!dis2Value) return;
         hasDecimal = false;
         const operatorName = e.target.innerText;
-        if(dis1Value && dis2Value && lastOperator){
+        if (dis1Value && dis2Value && lastOperator) {
             mathCalc();
         } else {
             result = parseFloat(dis2Value);
@@ -69,7 +69,7 @@ operatorsEl.forEach(operator => {
     })
 });
 
-function clearVar(operator = ''){
+function clearVar(operator = '') {
     dis1Value += dis2Value + ' ' + operator + ' ';
     display1El.innerText = dis1Value;
     display2El.innerText = '';
@@ -78,21 +78,21 @@ function clearVar(operator = ''){
 }
 
 //Add functionality to the operators
-function mathCalc(){
-    if(lastOperator === 'x'){
+function mathCalc() {
+    if (lastOperator === 'x') {
         result = multiply();
-    } else if(lastOperator === '+'){
+    } else if (lastOperator === '+') {
         result = add();
-    } else if(lastOperator === '-'){
+    } else if (lastOperator === '-') {
         result = subtract();
-    } else if(lastOperator === '/'){
-        if (parseFloat(dis2Value) !== 0){
-        result = divide();
-        } else { 
+    } else if (lastOperator === '/') {
+        if (parseFloat(dis2Value) !== 0) {
+            result = divide();
+        } else {
             const comment = Math.floor(Math.random() * comments.length);
             alert(comments[comment]);
         }
-    } else if(lastOperator === '%'){
+    } else if (lastOperator === '%') {
         result = parseFloat(result) % parseFloat(dis2Value);
     }
 }
@@ -101,7 +101,7 @@ function multiply() {
     calculation = parseFloat(result) * parseFloat(dis2Value);
     //Check if result has a decimal and if true... 
     result = (calculation - Math.floor(calculation)) !== 0;
-    if (result){
+    if (result) {
         //...limit it to 4 decimal places
         return calculation.toFixed(4);
         //Otherwise just return the result
@@ -113,7 +113,7 @@ function multiply() {
 function add() {
     calculation = parseFloat(result) + parseFloat(dis2Value);
     result = (calculation - Math.floor(calculation)) !== 0;
-    if (result){
+    if (result) {
         return calculation.toFixed(4);
     } else {
         return calculation;
@@ -123,7 +123,7 @@ function add() {
 function subtract() {
     calculation = parseFloat(result) - parseFloat(dis2Value);
     result = (calculation - Math.floor(calculation)) !== 0;
-    if (result){
+    if (result) {
         return calculation.toFixed(4);
     } else {
         return calculation;
@@ -133,7 +133,7 @@ function subtract() {
 function divide() {
     calculation = parseFloat(result) / parseFloat(dis2Value);
     result = (calculation - Math.floor(calculation)) !== 0;
-    if (result){
+    if (result) {
         return calculation.toFixed(4);
     } else {
         return calculation;
@@ -142,7 +142,7 @@ function divide() {
 
 //Add functionality to the '=' sign
 equalEl.addEventListener('click', (e) => {
-    if(!dis1Value || !dis2Value) return;
+    if (!dis1Value || !dis2Value) return;
     hasDecimal = false;
     mathCalc();
     clearVar();
@@ -164,7 +164,7 @@ clearAllEl.addEventListener('click', (e) => {
 
 //Add functionality to the Clear Last Entity (CE) button
 clearLastEl.addEventListener('click', (e) => {
-    if (display3El.innerText) { 
+    if (display3El.innerText) {
         display2El.innerText = '0';
         dis2Value = '';
     } else {
@@ -173,21 +173,21 @@ clearLastEl.addEventListener('click', (e) => {
         display3El.innerText = '0';
         dis1Value = '';
         dis2Value = '';
-        result = ''; 
-        };
+        result = '';
+    };
 });
 
 //Add functionality to the backspace button
 backspaceEl.addEventListener('click', (e) => {
-    if (display3El.innerText) { 
-        display2El.innerText = dis2Value.substring(0, dis2Value.length -1);
+    if (display3El.innerText) {
+        display2El.innerText = dis2Value.substring(0, dis2Value.length - 1);
         dis2Value = display2El.innerText;
-    } else { return }; 
+    } else { return };
 });
 
 //Add keyboard functionality for numbers and operators
 window.addEventListener('keydown', (e) => {
-    if(
+    if (
         e.key === '0' ||
         e.key === '1' ||
         e.key === '2' ||
@@ -199,54 +199,54 @@ window.addEventListener('keydown', (e) => {
         e.key === '8' ||
         e.key === '9' ||
         e.key === '.'
-    ){
+    ) {
         pressNumButtons(e.key);
-    } else if(
+    } else if (
         e.key === '+' ||
         e.key === '-' ||
         e.key === '/' ||
         e.key === '%'
-    ){
+    ) {
         pressOperButtons(e.key);
-    } else if(e.key === '*'){
+    } else if (e.key === '*') {
         pressOperButtons('x');
-    } else if(e.key === 'Enter' || e.key === '='){
+    } else if (e.key === 'Enter' || e.key === '=') {
         pressEqualButton();
-    } else if(e.key === 'Backspace' || e.key === 'Delete'){
+    } else if (e.key === 'Backspace' || e.key === 'Delete') {
         pressBackspaceButton();
     }
 
 });
 
 //Function that handles number button presses 
-function pressNumButtons(key){
+function pressNumButtons(key) {
     numbersEl.forEach(button => {
-        if(button.innerText === key){
+        if (button.innerText === key) {
             button.click();
         }
     })
 };
 
 //Function that handles operator button presses
-function pressOperButtons(key){
+function pressOperButtons(key) {
     operatorsEl.forEach(button => {
-        if(button.innerText === key){
+        if (button.innerText === key) {
             button.click();
         }
     })
 };
 
 //Function that handles equal sign button press
-function pressEqualButton(){
+function pressEqualButton() {
     equalEl.click();
 }
 
 //Function that handles backspace button press
-function pressBackspaceButton(){
+function pressBackspaceButton() {
     backspaceEl.click();
 }
 
-function clearEverything(){
+function clearEverything() {
     display1El.innerText = '0';
     display2El.innerText = '0';
     display3El.innerText = '0';
