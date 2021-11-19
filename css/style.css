@@ -37,7 +37,7 @@ body {
     background-color: gray;
     margin-top: 20px;
     margin-bottom: 30px;
-    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,1);
 }
 
 .display-1 {
@@ -92,7 +92,7 @@ body {
     width: 90%;
     height: 500px;
     border-radius: 10px;
-    border: 0.5mm solid silver;
+    /* border: 0.2mm solid silver; */
     margin-top: 30px;
 }
 
