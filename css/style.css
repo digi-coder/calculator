@@ -21,7 +21,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: darkgrey;
+    background-color: black;
     width: 375px;
     height: 812px;
     border-radius: 10px;
@@ -37,6 +37,7 @@ body {
     background-color: gray;
     margin-top: 20px;
     margin-bottom: 30px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
 }
 
 .display-1 {
@@ -132,7 +133,7 @@ body {
     margin-bottom: 5px;
     font-family: monospace;
     font-size: 15px;
-    color: black;
+    color: orange;
 }
 
 .number {
