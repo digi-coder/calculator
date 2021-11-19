@@ -68,8 +68,8 @@ body {
     margin-top: 2px;
     margin-bottom: 2px;
     font-size: 35px;
-    /* overflow-x: scroll;
-    overflow-y: hidden; */
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .display-3 {
