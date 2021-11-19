@@ -56,16 +56,19 @@ body {
 
 .display-2 {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
     border: 2px;
     border-color: black;
     border-radius: 10px;
-    width: 90%;
+    width: 95%;
     height: 50%;
     margin-top: 2px;
     margin-bottom: 2px;
     font-size: 35px;
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
 }
 
 .display-3 {
